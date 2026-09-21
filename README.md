@@ -1,19 +1,25 @@
 # mnist-cnn
-# InternSpot MNIST Digit Recognition
+# MNIST Digit Recognition
 
-A handwritten digit recognition project built with a LeNet-5 Convolutional Neural Network (CNN) and the MNIST dataset as part of my InternSpot learning journey.
+A deep-learning project that classifies handwritten digits (0–9) using a LeNet-5 Convolutional Neural Network (CNN) trained on the MNIST dataset.
 
-## Project Overview
+## Overview
 
-This model learns to identify handwritten digits from 0 to 9. It is trained on MNIST, a dataset containing 60,000 training images and 10,000 test images.
+This project builds and evaluates a CNN for handwritten digit recognition. The model processes grayscale images, extracts visual features through convolution and pooling layers, and predicts the corresponding digit class.
 
-The project uses the LeNet-5 CNN architecture to extract visual features from grayscale digit images and classify them into one of ten digit classes.
+## Dataset
 
-## Technologies Used
+The MNIST dataset contains handwritten digit images:
+
+- 60,000 training images
+- 10,000 test images
+- Image dimensions: 28 × 28 pixels
+- Classes: digits 0 through 9
+
+## Technologies
 
 - Python
-- TensorFlow
-- Keras
+- TensorFlow / Keras
 - NumPy
 - Pandas
 - Scikit-learn
@@ -21,7 +27,7 @@ The project uses the LeNet-5 CNN architecture to extract visual features from gr
 
 ## Model Architecture
 
-The model follows the LeNet-5 architecture:
+The model is based on LeNet-5 and includes:
 
 1. Conv2D — 6 filters, 5 × 5 kernel, tanh activation
 2. Average Pooling
@@ -30,52 +36,52 @@ The model follows the LeNet-5 architecture:
 5. Conv2D — 120 filters, 5 × 5 kernel, tanh activation
 6. Flatten
 7. Dense — 84 neurons, tanh activation
-8. Output Dense — 10 neurons, softmax activation
+8. Output layer — 10 neurons, softmax activation
 
-## Dataset
+## Workflow
 
-MNIST contains grayscale images of handwritten digits.
-
-- Training images: 60,000
-- Test images: 10,000
-- Image size: 28 × 28 pixels
-- Classes: 10 digits, from 0 to 9
+- Load the MNIST dataset
+- Reshape images to include a grayscale channel
+- Split training data into training and validation sets
+- Standardize pixel values
+- One-hot encode digit labels
+- Train the LeNet-5 CNN
+- Evaluate the final model on unseen test images
 
 ## Results
 
-The model achieved approximately **98% test accuracy** on unseen MNIST images.
+The reference implementation achieved approximately **98.24% test accuracy**. Results may vary slightly between runs.
 
 ## How to Run
 
-1. Clone this repository.
+1. Clone the repository.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/internspot-mnist-digit-recognition.git
+git clone https://github.com/Muhammed-Mish-Al/internspot-mnist.git
 ```
 
-2. Install the required libraries.
+2. Open the project folder.
+
+```bash
+cd internspot-mnist
+```
+
+3. Install the required libraries.
 
 ```bash
 pip install tensorflow numpy pandas scikit-learn jupyter
 ```
 
-3. Open Jupyter Notebook.
+4. Start Jupyter Notebook.
 
 ```bash
 jupyter notebook
 ```
 
-4. Open the project notebook and run every cell from top to bottom.
-
-## What I Learned
-
-- Loading and preparing image datasets
-- Reshaping grayscale images for CNN input
-- Standardizing pixel values
-- One-hot encoding labels
-- Building a LeNet-5 CNN with TensorFlow and Keras
-- Training, validating, and evaluating a deep-learning model
+5. Open `mnist_digit_recognition.ipynb` and run all cells from top to bottom.
 
 ## Author
 
-Built by **YOUR NAME** as an InternSpot project.
+**Muhammed Mish_Al**
+
+Completed as part of the **InternSpot Internship**.
